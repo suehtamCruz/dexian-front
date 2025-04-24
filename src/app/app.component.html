@@ -1,1 +1,7 @@
-<h1 class="text-[40px]">Hello World</h1>
+<main class="w-full h-full flex flex-col">
+  @if(localStorage.getItem('auth_token') != null) {
+  <app-menu></app-menu>
+  }
+
+  <router-outlet></router-outlet>
+</main>

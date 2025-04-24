@@ -1,0 +1,29 @@
+<main
+  class="w-full h-full flex items-center justify-center absolute top-0 bg-[#3e3e3e]"
+>
+  <section
+    class="w-[400px] max-md:w-[300px] rounded-[8px] p-[16px] flex flex-col gap-[24px] bg-[#fff]"
+  >
+    <h1 class="text-[24px] font-[600] text-center">Login</h1>
+
+    <form [formGroup]="form">
+      <mat-form-field class="w-full">
+        <mat-label>Nome</mat-label>
+        <input type="text" matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Senha</mat-label>
+        <input type="password" matInput formControlName="password" />
+      </mat-form-field>
+    </form>
+
+    <button
+      class="w-full h-[40px] bg-[#000] text-[#fff] flex items-center justify-center rounded-[8px] border-none text-[16px] font-[600] cursor-pointer max-md:text-[14px] disabled:opacity-[0.5]"
+      [disabled]="form.invalid"
+      (click)="login()"
+    >
+      Entrar
+    </button>
+  </section>
+</main>

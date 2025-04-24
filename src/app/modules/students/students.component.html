@@ -1,1 +1,77 @@
- 
+<main class="w-full h-full p-[64px] max-md:p-[32px] flex flex-col gap-[32px]">
+  <section class="flex items-baseline max-md:flex-col gap-[12px]">
+    <mat-form-field class="w-[200px] max-md:w-full">
+      <input
+        matInput
+        placeholder="Buscar por nome"
+        [formControl]="studentControl"
+      />
+    </mat-form-field>
+  </section>
+
+  <div
+    class="flex gap-[24px] flex-wrap w-full overflow-x-auto max-md:grid max-md:grid-cols-1 max-lg:grid-cols-2"
+  >
+    @for (student of students; track $index) {
+    <div
+      class="w-[400px] max-lg:w-[300px] flex flex-col gap-[24px] bg-[#f2f2f2] rounded-[8px] p-[16px] max-md:w-full max-md:col-span-1 max-lg:col-span-2"
+    >
+      <div class="w-full relative">
+        <h3 class="font-[400] text-[24px] text-center">{{ student.nome }}</h3>
+
+        <div class="absolute flex items-center gap-[12px] right-0 top-0">
+          <mat-icon
+            fontIcon="edit"
+            (click)="openEditDialog(student)"
+          ></mat-icon>
+
+          <mat-icon fontIcon="delete"></mat-icon>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 w-full gap-[24px]">
+        <div class="flex col-span-1 flex-col gap-[8px] items-center">
+          <h4 class="font-[400] text-[16px] leading-[1]">Código do aluno:</h4>
+          <strong class="font-[600] text-[16px]">{{ student.codAluno }}</strong>
+        </div>
+
+        <div class="flex col-span-1 flex-col gap-[8px] items-center">
+          <h4 class="font-[400] text-[16px] leading-[1]">
+            Data de nascimento:
+          </h4>
+          <strong class="font-[600] text-[16px]">{{
+            student.dataNascimento | date : "dd/MM/yyyy"
+          }}</strong>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 w-full gap-[24px]">
+        <div class="flex col-span-1 flex-col gap-[8px] items-center">
+          <h4 class="font-[400] text-[16px] leading-[1]">CPF:</h4>
+          <strong class="font-[600] text-[16px]">{{ student.cpf }}</strong>
+        </div>
+
+        <div class="flex col-span-1 flex-col gap-[8px] items-center">
+          <h4 class="font-[400] text-[16px] leading-[1]">Endereço:</h4>
+          <strong class="font-[600] text-[16px]">{{ student.endereco }}</strong>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 w-full gap-[24px]">
+        <div class="flex col-span-1 flex-col gap-[8px] items-center">
+          <h4 class="font-[400] text-[16px] leading-[1]">Celular:</h4>
+          <strong class="font-[600] text-[16px]">{{ student.celular }}</strong>
+        </div>
+
+        <div class="flex col-span-1 flex-col gap-[8px] items-center">
+          <h4 class="font-[400] text-[16px] leading-[1]">Escola:</h4>
+          <strong class="font-[600] text-[16px]">{{
+            student.codEscola
+          }}</strong>
+        </div>
+      </div>
+    </div>
+
+    }
+  </div>
+</main>

@@ -1,7 +1,11 @@
 <section class="h-[60px] bg-[#000] px-[32px] py-[16px] w-full">
   <div class="flex items-center gap-[24px]">
-    <a class="text-[#fff] text-[16px] font-[400]">Alunos</a>
-    <a class="text-[#fff] text-[16px] font-[400]">Escolas</a>
-    <a class="text-[#fff] text-[16px] font-[400]">Usuarios</a>
+    @for (item of menuItems; track $index) {
+    <a
+      class="text-[#fff] text-[16px] font-[400] cursor-pointer"
+      (click)="navigateByPath(item.path)"
+      >{{ item.label }}</a
+    >
+    }
   </div>
 </section>

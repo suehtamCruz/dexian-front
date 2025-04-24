@@ -1,0 +1,46 @@
+<section
+  class="relative flex flex-col gap-[24px] p-[32px] max-md:p-[16px] w-full h-full bg-[#fff]"
+>
+  <h2 class="text-[24px] font-[600] text-center">
+    Editar Aluno {{ data.nome }}
+  </h2>
+
+  <form [formGroup]="form">
+    <mat-form-field class="w-full">
+      <mat-label>Endereço</mat-label>
+      <input matInput formControlName="endereco" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Celular</mat-label>
+      <input matInput formControlName="celular" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Cod. escola</mat-label>
+      <input matInput formControlName="codEscola" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Cod. aluno</mat-label>
+      <input matInput formControlName="codAluno" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" readonly />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput formControlName="dataNascimento" readonly />
+    </mat-form-field>
+  </form>
+
+  <button
+    class="w-full h-[40px] bg-[#000] text-[#fff] flex items-center justify-center rounded-[8px] border-none text-[16px] font-[600] cursor-pointer max-md:text-[14px] disabled:opacity-[0.5]"
+    (click)="updateStudentData()"
+  >
+    Atualizar
+  </button>
+</section>
