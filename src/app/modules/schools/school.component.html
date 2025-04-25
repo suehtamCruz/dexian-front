@@ -1,1 +1,50 @@
- 
+<main class="w-full h-full p-[64px] max-md:p-[32px] flex flex-col gap-[32px]">
+  <section
+    class="w-full justify-between flex items-center max-md:flex-col gap-[12px]"
+  >
+    <mat-form-field class="w-[300px] max-md:w-full">
+      <input
+        matInput
+        placeholder="Buscar por descricao"
+        [formControl]="schoolControl"
+      />
+    </mat-form-field>
+
+    <button
+      class="h-[40px] bg-[#000] text-[#fff] flex items-center justify-center rounded-[8px] border-none text-[16px] font-[600] cursor-pointer max-md:text-[14px] p-[16px] max-md:w-full"
+      (click)="addSchool()"
+    >
+      Adicionar escola
+    </button>
+  </section>
+
+  <div
+    class="flex gap-[24px] flex-wrap w-full overflow-x-auto max-md:grid max-md:grid-cols-1 max-lg:grid-cols-2"
+  >
+    @for (school of schools; track $index) {
+    <div
+      class="w-[400px] max-lg:w-[300px] flex flex-col gap-[24px] bg-[#f2f2f2] rounded-[8px] p-[16px] max-md:w-full max-md:col-span-1 max-lg:col-span-2"
+    >
+      <div class="w-full relative flex items-center justify-center">
+        <h3 class="font-[400] text-[24px] text-center">{{ school.iCodEscola }}</h3>
+
+        <div class="flex items-center gap-[12px]">
+          <mat-icon
+            class="cursor-pointer absolute right-[30px] top-0"
+            fontIcon="edit"
+            (click)="openEditDialog(school)"
+          ></mat-icon>
+
+          <mat-icon
+            class="cursor-pointer absolute right-0 top-0"
+            fontIcon="delete"
+            (click)="openDeleteDialog(school)"
+          ></mat-icon>
+        </div>
+      </div>
+
+      <p class="w-full leading-[1.3] text-[14px] font-[400] text-[#252525]">{{ school.sDescricao }}</p>
+    </div>
+    }
+  </div>
+</main>

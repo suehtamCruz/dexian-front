@@ -17,11 +17,7 @@ export class MenuComponent {
     {
       label: 'Escolas',
       path: 'schools',
-    },
-    {
-      label: 'Usuarios',
-      path: 'users',
-    },
+    }, 
   ]
   constructor(private router: Router) {}
   navigateByPath(path: string) {

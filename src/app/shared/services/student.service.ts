@@ -24,10 +24,23 @@ export class StudentService {
     );
   }
 
+  createStudent(newStudent: StudentModel) {
+    return this.http.post<StudentModel>(
+      `${environment.apiUrl}/students`,
+      newStudent
+    );
+  }
+
   updateStudent(student: StudentModel): Observable<StudentModel> {
     return this.http.put<StudentModel>(
       `${environment.apiUrl}/students/${student.codAluno}`,
       student
+    );
+  }
+
+  deleteStudent(cod: number): Observable<StudentModel> {
+    return this.http.delete<StudentModel>(
+      `${environment.apiUrl}/students/${cod}`
     );
   }
 }

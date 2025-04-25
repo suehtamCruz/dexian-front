@@ -1,0 +1,26 @@
+<section
+  class="relative flex flex-col gap-[24px] p-[32px] max-md:p-[16px] w-full h-full bg-[#fff]"
+>
+  <h2 class="text-[24px] font-[600] text-center">
+    Editar Escola {{ data.iCodEscola }}
+  </h2>
+
+  <form [formGroup]="form">
+    <mat-form-field class="w-full">
+      <mat-label>Cód. escola</mat-label>
+      <input matInput formControlName="codEscola" readonly />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Descrição</mat-label>
+      <input matInput formControlName="descricao" />
+    </mat-form-field>
+  </form>
+
+  <button
+    class="w-full h-[40px] bg-[#000] text-[#fff] flex items-center justify-center rounded-[8px] border-none text-[16px] font-[600] cursor-pointer max-md:text-[14px] disabled:opacity-[0.5]"
+    (click)="updateSchool()"
+  >
+    Atualizar
+  </button>
+</section>

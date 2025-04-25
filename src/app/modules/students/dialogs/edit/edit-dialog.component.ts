@@ -13,8 +13,9 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { StudentModel } from '../../../shared/models/student.model';
-import { StudentService } from '../../../shared/services/student.service';
+import { StudentService } from '../../../../shared/services/student.service';
+import { StudentModel } from '../../../../shared/models/student.model';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @Component({
   selector: 'edit-student-dialog',
@@ -25,7 +26,9 @@ import { StudentService } from '../../../shared/services/student.service';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    NgxMaskDirective,
   ],
+  providers: [provideNgxMask()],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditDialogComponent {

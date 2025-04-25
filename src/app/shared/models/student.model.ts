@@ -8,3 +8,4 @@ export interface StudentModel {
   celular: string;
   codEscola: number;
 }
+ 

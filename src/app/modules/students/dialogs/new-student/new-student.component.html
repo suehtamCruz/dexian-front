@@ -1,0 +1,47 @@
+<main
+  class="relative flex flex-col gap-[24px] p-[32px] max-md:p-[16px] w-full h-full bg-[#fff]"
+>
+  <form [formGroup]="form" class="flex flex-col gap-[8px]">
+    <mat-form-field class="w-full">
+      <mat-label>Endereço</mat-label>
+      <input matInput formControlName="endereco" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Celular</mat-label>
+      <input matInput formControlName="celular" mask="(00) 00000-0000" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Cod. escola</mat-label>
+      <input matInput formControlName="codEscola" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Cod. aluno</mat-label>
+      <input matInput formControlName="codAluno" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" mask="000.000.000-00" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput formControlName="dataNascimento" mask="00/00/0000" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" />
+    </mat-form-field>
+  </form>
+
+  <button
+    class="w-full h-[40px] bg-[#000] text-[#fff] flex items-center justify-center rounded-[8px] border-none text-[16px] font-[600] cursor-pointer max-md:text-[14px]"
+    (click)="createStudent()"
+  >
+    Salvar
+  </button>
+</main>

@@ -1,12 +1,19 @@
 <main class="w-full h-full p-[64px] max-md:p-[32px] flex flex-col gap-[32px]">
-  <section class="flex items-baseline max-md:flex-col gap-[12px]">
-    <mat-form-field class="w-[200px] max-md:w-full">
+  <section class="w-full justify-between flex items-center max-md:flex-col gap-[12px]">
+    <mat-form-field class="w-[300px] max-md:w-full">
       <input
         matInput
-        placeholder="Buscar por nome"
+        placeholder="Buscar por nome ou cpf"
         [formControl]="studentControl"
       />
     </mat-form-field>
+
+    <button
+      class="h-[40px] bg-[#000] text-[#fff] flex items-center justify-center rounded-[8px] border-none text-[16px] font-[600] cursor-pointer max-md:text-[14px] p-[16px] max-md:w-full"
+      (click)="openNewStudentDialog()"
+    >
+      Adicionar aluno
+    </button>
   </section>
 
   <div
@@ -16,16 +23,21 @@
     <div
       class="w-[400px] max-lg:w-[300px] flex flex-col gap-[24px] bg-[#f2f2f2] rounded-[8px] p-[16px] max-md:w-full max-md:col-span-1 max-lg:col-span-2"
     >
-      <div class="w-full relative">
+      <div class="w-full relative flex items-center justify-center">
         <h3 class="font-[400] text-[24px] text-center">{{ student.nome }}</h3>
 
-        <div class="absolute flex items-center gap-[12px] right-0 top-0">
+        <div class="flex items-center gap-[12px]">
           <mat-icon
+            class="cursor-pointer absolute right-[30px] top-0"
             fontIcon="edit"
             (click)="openEditDialog(student)"
           ></mat-icon>
 
-          <mat-icon fontIcon="delete"></mat-icon>
+          <mat-icon
+            class="cursor-pointer absolute right-0 top-0"
+            fontIcon="delete"
+            (click)="openDeleteDialog(student)"
+          ></mat-icon>
         </div>
       </div>
 
@@ -48,7 +60,9 @@
       <div class="grid grid-cols-2 w-full gap-[24px]">
         <div class="flex col-span-1 flex-col gap-[8px] items-center">
           <h4 class="font-[400] text-[16px] leading-[1]">CPF:</h4>
-          <strong class="font-[600] text-[16px]">{{ student.cpf }}</strong>
+          <strong class="font-[600] text-[16px]">{{
+            student.cpf | mask : "000.000.000-00"
+          }}</strong>
         </div>
 
         <div class="flex col-span-1 flex-col gap-[8px] items-center">
@@ -60,7 +74,9 @@
       <div class="grid grid-cols-2 w-full gap-[24px]">
         <div class="flex col-span-1 flex-col gap-[8px] items-center">
           <h4 class="font-[400] text-[16px] leading-[1]">Celular:</h4>
-          <strong class="font-[600] text-[16px]">{{ student.celular }}</strong>
+          <strong class="font-[600] text-[16px]">{{
+            student.celular | mask : "(00) 00000-0000"
+          }}</strong>
         </div>
 
         <div class="flex col-span-1 flex-col gap-[8px] items-center">
