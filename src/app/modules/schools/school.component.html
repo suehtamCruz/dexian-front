@@ -2,10 +2,10 @@
   <section
     class="w-full justify-between flex items-center max-md:flex-col gap-[12px]"
   >
-    <mat-form-field class="w-[300px] max-md:w-full">
+    <mat-form-field class="w-[300px] max-md:w-full"  appearance="outline">
       <input
         matInput
-        placeholder="Buscar por descricao"
+        placeholder="Buscar por descrição"
         [formControl]="schoolControl"
       />
     </mat-form-field>
@@ -23,7 +23,7 @@
   >
     @for (school of schools; track $index) {
     <div
-      class="w-[400px] max-lg:w-[300px] flex flex-col gap-[24px] bg-[#f2f2f2] rounded-[8px] p-[16px] max-md:w-full max-md:col-span-1 max-lg:col-span-2"
+      class="w-[400px] max-lg:w-[300px] flex flex-col gap-[24px] bg-[#fff] rounded-[8px] p-[16px] max-md:w-full max-md:col-span-1 max-lg:col-span-2"
     >
       <div class="w-full relative flex items-center justify-center">
         <h3 class="font-[400] text-[24px] text-center">{{ school.iCodEscola }}</h3>

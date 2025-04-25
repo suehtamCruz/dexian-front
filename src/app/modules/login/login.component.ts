@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -9,10 +9,10 @@ import {
 } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ToastrService } from 'ngx-toastr';
-import { LoginModel } from '../../shared/models/login.model';
-import { AuthService } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../shared/services/auth.service';
+import { LoginModel } from '../../shared/models/login.model';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +26,13 @@ import { Router } from '@angular/router';
   ],
 })
 export class LoginComponent {
+  @HostListener('document:keydown.enter', ['$event']) 
+  onKeydownHandler(event: KeyboardEvent) {
+    if (this.form.valid) {
+      this.login();
+    }
+  }
+
   form = new FormGroup({
     name: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
@@ -48,7 +55,7 @@ export class LoginComponent {
       localStorage.setItem('auth_token', resp.token);
       localStorage.setItem('user', JSON.stringify(resp.user));
       this.toastr.success('Login realizado com sucesso!');
-      this.router.navigate(['/users']);
+      this.router.navigate(['/students']);
     });
   }
 }

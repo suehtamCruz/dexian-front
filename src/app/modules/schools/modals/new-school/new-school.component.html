@@ -1,15 +1,14 @@
 <main
   class="relative flex flex-col gap-[24px] p-[32px] max-md:p-[16px] w-full h-full bg-[#fff]"
-> 
-
+>
   <h2 class="text-[24px] font-[600] text-center">Adicionar escola</h2>
   <form [formGroup]="form" class="flex flex-col gap-[8px]">
-    <mat-form-field class="w-full">
+    <mat-form-field class="w-full" appearance="outline">
       <mat-label>Cód. escola</mat-label>
       <input matInput formControlName="codEscola" />
     </mat-form-field>
 
-    <mat-form-field class="w-full">
+    <mat-form-field class="w-full" appearance="outline">
       <mat-label>Descrição</mat-label>
       <input matInput formControlName="descricao" />
     </mat-form-field>

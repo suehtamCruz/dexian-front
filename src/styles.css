@@ -1,3 +1,65 @@
 @import "tailwindcss";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: transparent !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+.mat-mdc-input-element,
+.mat-mdc-form-field-label,
+.mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label,
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: #000 !important;
+}
+
+::placeholder {
+  color: #000 !important;
+  opacity: 0.7 !important;
+}
+
+.mat-mdc-input-element {
+  caret-color: #000 !important;
+}
+
+.mdc-notched-outline__leading,
+.mdc-notched-outline__notch,
+.mdc-notched-outline__trailing {
+  border-color: #000 !important;
+}
+
+.mdc-line-ripple::before,
+.mdc-line-ripple::after {
+  display: none !important;
+}
+
+.mat-mdc-form-field.mat-mdc-form-field-type-mat-input .mdc-line-ripple::before,
+.mat-mdc-form-field.mat-mdc-form-field-type-mat-input .mdc-line-ripple::after {
+  border-bottom-width: 0 !important;
+}
+
+.mdc-notched-outline__notch {
+  border-right: none !important;
+}
+
+button {
+  background-color: #576f94 ;
+}

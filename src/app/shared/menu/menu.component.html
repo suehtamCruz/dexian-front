@@ -1,11 +1,21 @@
-<section class="h-[60px] bg-[#000] px-[32px] py-[16px] w-full">
+<section
+  class="h-[60px] bg-[#5f6794] px-[32px] flex justify-center items-center relative py-[16px] w-full"
+>
   <div class="flex items-center gap-[24px]">
     @for (item of menuItems; track $index) {
     <a
-      class="text-[#fff] text-[16px] font-[400] cursor-pointer"
+      class="text-[#fff] text-[16px] font-[600] cursor-pointer"
       (click)="navigateByPath(item.path)"
       >{{ item.label }}</a
     >
     }
   </div>
+
+  <mat-icon
+    class="cursor-pointer absolute right-[32px] top-[18px]"
+    style="color: #fff"
+    fontIcon="logout"
+    matTooltip="Sair"
+    (click)="logOut()"
+  ></mat-icon>
 </section>
