@@ -93,6 +93,7 @@ export class StudentsComponent implements OnInit, AfterViewInit, OnDestroy {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
+      cancelButtonText: 'Não, manter aluno',
       confirmButtonText: 'Sim, excluir',
     }).then((result) => {
       if (result.isConfirmed) {

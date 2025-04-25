@@ -1,59 +1,106 @@
-# DexianFront
+# Sistema de Gestão Escolar - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Este projeto é o frontend do Sistema de Gestão Escolar, desenvolvido com [Angular](https://angular.dev/) versão 19.2.9. O sistema permite o gerenciamento de escolas e alunos, oferecendo uma interface moderna e intuitiva para administradores escolares.
 
-## Development server
+## Funcionalidades
 
-To start a local development server, run:
+- **Gestão de Escolas**: Cadastro, edição, visualização e exclusão de escolas
+- **Gestão de Alunos**: Cadastro, edição, visualização e exclusão de alunos
+- **Sistema de Autenticação**: Login seguro para acesso às funcionalidades
+- **Interface Responsiva**: Design adaptável para diferentes dispositivos
+
+## Tecnologias Utilizadas
+
+- **Angular 19**: Framework para desenvolvimento do frontend
+- **Angular Material**: Biblioteca de componentes de UI
+- **TailwindCSS**: Framework CSS para estilização
+- **NgxMask**: Para formatação de campos como CPF e telefone
+- **SweetAlert2**: Para exibição de alertas e confirmações
+- **RxJS**: Para programação reativa
+
+## Pré-requisitos
+
+Para executar este projeto, você precisará ter instalado:
+
+- Node.js (versão 18 ou superior)
+- npm (gerenciador de pacotes do Node.js)
+- Angular CLI (versão 19 ou superior)
+
+## Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/seuUsuario/dexian-front.git
+cd dexian-front
+npm install
+```
+
+## Servidor de Desenvolvimento
+
+Para iniciar o servidor de desenvolvimento local, execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Após iniciar o servidor, abra seu navegador e acesse `http://localhost:4200/`. A aplicação será recarregada automaticamente sempre que você fizer alterações nos arquivos fonte.
 
-## Code scaffolding
+## Estrutura do Projeto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── modules/           # Módulos principais (escolas, alunos, login)
+│   │   ├── login/         # Componentes de autenticação
+│   │   ├── schools/       # Componentes de gestão de escolas
+│   │   └── students/      # Componentes de gestão de alunos
+│   ├── shared/            # Recursos compartilhados
+│   │   ├── models/        # Interfaces e modelos de dados
+│   │   ├── services/      # Serviços para comunicação com a API
+│   │   └── menu/          # Componente de navegação
+├── assets/                # Recursos estáticos (imagens, ícones)
+└── environments/          # Configurações de ambiente
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Construção para Produção
+
+Para compilar o projeto para ambiente de produção, execute:
 
 ```bash
-ng generate --help
+ng build --prod
 ```
 
-## Building
+Isso irá gerar os arquivos de distribuição na pasta `dist/`, otimizados para melhor desempenho.
 
-To build the project run:
+## Testes Unitários
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Para executar os testes unitários com o [Karma](https://karma-runner.github.io), use o comando:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Testes End-to-End
 
-For end-to-end (e2e) testing, run:
+Para testes end-to-end, execute:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+O Angular CLI não vem com um framework de testes end-to-end por padrão. Você pode escolher um que atenda às suas necessidades.
 
-## Additional Resources
+## Contribuição
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Para contribuir com o projeto:
+
+1. Faça um fork do repositório
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
+3. Faça commit das suas alterações (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Envie para o branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
+
+## Recursos Adicionais
+
+Para mais informações sobre o uso do Angular CLI, incluindo referências detalhadas de comandos, visite a [Documentação Oficial do Angular](https://angular.dev/tools/cli).
