@@ -63,15 +63,6 @@ src/
 └── environments/          # Configurações de ambiente
 ```
 
-## Construção para Produção
-
-Para compilar o projeto para ambiente de produção, execute:
-
-```bash
-ng build --prod
-```
-
-Isso irá gerar os arquivos de distribuição na pasta `dist/`, otimizados para melhor desempenho.
 
 ## Testes Unitários
 
@@ -80,27 +71,3 @@ Para executar os testes unitários com o [Karma](https://karma-runner.github.io)
 ```bash
 ng test
 ```
-
-## Testes End-to-End
-
-Para testes end-to-end, execute:
-
-```bash
-ng e2e
-```
-
-O Angular CLI não vem com um framework de testes end-to-end por padrão. Você pode escolher um que atenda às suas necessidades.
-
-## Contribuição
-
-Para contribuir com o projeto:
-
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
-3. Faça commit das suas alterações (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Envie para o branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## Recursos Adicionais
-
-Para mais informações sobre o uso do Angular CLI, incluindo referências detalhadas de comandos, visite a [Documentação Oficial do Angular](https://angular.dev/tools/cli).
