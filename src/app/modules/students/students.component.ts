@@ -104,9 +104,13 @@ export class StudentsComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
   openNewStudentDialog() {
-    this.dialog.open(NewStudentComponent, {
+    const dialog = this.dialog.open(NewStudentComponent, {
       width: '600px',
       height: '700px',
+    });
+
+    dialog.afterClosed().pipe(takeUntil(this._destroy$)).subscribe(() => {
+      this._getAllStudents();
     });
   }
   private _getAllStudents() {
