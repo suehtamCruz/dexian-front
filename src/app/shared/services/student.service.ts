@@ -33,14 +33,14 @@ export class StudentService {
 
   updateStudent(student: StudentModel): Observable<StudentModel> {
     return this.http.put<StudentModel>(
-      `${environment.apiUrl}/students/${student.codAluno}`,
+      `${environment.apiUrl}/students/${student.id}`,
       student
     );
   }
 
-  deleteStudent(cod: number): Observable<StudentModel> {
+  deleteStudent(idAluno: number): Observable<StudentModel> {
     return this.http.delete<StudentModel>(
-      `${environment.apiUrl}/students/${cod}`
+      `${environment.apiUrl}/students/${idAluno}`
     );
   }
 }

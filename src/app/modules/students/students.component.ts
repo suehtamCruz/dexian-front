@@ -78,10 +78,14 @@ export class StudentsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   openEditDialog(student: StudentModel) {
-    this.dialog.open(EditDialogComponent, {
+    const dialog = this.dialog.open(EditDialogComponent, {
       data: student,
       width: '600px',
       height: '650px',
+    });
+    
+    dialog.afterClosed().pipe(takeUntil(this._destroy$)).subscribe(() => {
+      this._getAllStudents();
     });
   }
 

@@ -66,6 +66,10 @@ export class EditDialogComponent {
       codEscola: this.data.codEscola,
       codAluno: Number(this.form.value.codAluno),
       celular: this.form.value.celular,
+      cpf: this.data.cpf,
+      dataNascimento: this.data.dataNascimento,
+      nome: this.form.value.nome, 
+      id: this.data.id,
     } as StudentModel;
     this._studentService.updateStudent(data).subscribe((resp) => {
       this.dialogRef.close();
